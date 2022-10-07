@@ -18,7 +18,8 @@
           class="org.example.PhonkMusic">
     </bean>
     <bean id="musicPlayer"
-          class="org.example.MusicPlayer">
+          class="org.example.MusicPlayer"
+    scope="prototype">
         <property name="musicList">
             <list>
                 <ref bean="classical"/>
