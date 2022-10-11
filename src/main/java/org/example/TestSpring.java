@@ -6,10 +6,15 @@ import java.util.Scanner;
 
 public class TestSpring {
     public static void main(String[] args) {
-        Scanner x = new Scanner(System.in);
+/*        Scanner x = new Scanner(System.in);
         System.out.println("Enter type of music: 1-Classical 2-Phonk 3-Rock");
-        int c = x.nextInt();
+        int c = x.nextInt();*/
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        /*MusicPlayer musicPlayer = context.getBean("musicPlayer",MusicPlayer.class);
+
+        musicPlayer.playMusic();*/
+/*
         if(c==3) {
             Music music = context.getBean("rockMusic", Music.class);
             MusicPlayer musicPlayer = new MusicPlayer(music);
@@ -26,6 +31,7 @@ public class TestSpring {
             musicPlayer.playMusic();
         }
 
+*/
 
 //        System.out.println(classicalMusic.getSong());
 
@@ -48,6 +54,8 @@ public class TestSpring {
         System.out.println(secondMusicPlayer.getVolume());*/
         //System.out.println(musicPlayer.getName());
         //System.out.println(musicPlayer.getVolume());
+        Computer computer = context.getBean("computer", Computer.class);
+        System.out.println(computer);
 
         context.close();
     }
