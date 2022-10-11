@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MusicPlayer {
+    private Music music;
+    public MusicPlayer(Music music){
+        this.music = music;
+    }
     private List<Music> musicList = new ArrayList<>();
     public void setMusicList(List<Music> musicList) {
         this.musicList = musicList;
@@ -36,7 +40,6 @@ public class MusicPlayer {
     //this.music=music;
     //}
     public void playMusic(){
-        for(int i=0; i < musicList.size(); i++)
-        System.out.println("Playing: " + musicList.get(i).getSong());
+        System.out.println("Playing: " + music.getSong());
     }
 }

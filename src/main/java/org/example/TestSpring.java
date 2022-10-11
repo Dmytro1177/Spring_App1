@@ -2,13 +2,32 @@ package org.example;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Scanner;
+
 public class TestSpring {
     public static void main(String[] args) {
+        Scanner x = new Scanner(System.in);
+        System.out.println("Enter type of music: 1-Classical 2-Phonk 3-Rock");
+        int c = x.nextInt();
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        if(c==3) {
+            Music music = context.getBean("rockMusic", Music.class);
+            MusicPlayer musicPlayer = new MusicPlayer(music);
+            musicPlayer.playMusic();
+        }
+        else if(c==2) {
+            Music music = context.getBean("phonkMusic", Music.class);
+            MusicPlayer musicPlayer = new MusicPlayer(music);
+            musicPlayer.playMusic();
+        }
+        else {
+            Music music = context.getBean("classicalMusic", Music.class);
+            MusicPlayer musicPlayer = new MusicPlayer(music);
+            musicPlayer.playMusic();
+        }
 
-        ClassicalMusic classicalMusic = context.getBean("classical", ClassicalMusic.class);
 
-        System.out.println(classicalMusic.getSong());
+//        System.out.println(classicalMusic.getSong());
 
 
 
