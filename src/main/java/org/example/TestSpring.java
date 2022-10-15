@@ -10,52 +10,20 @@ public class TestSpring {
         System.out.println("Enter type of music: 1-Classical 2-Phonk 3-Rock");
         int c = x.nextInt();*/
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-
-        /*MusicPlayer musicPlayer = context.getBean("musicPlayer",MusicPlayer.class);
-
-        musicPlayer.playMusic();*/
 /*
-        if(c==3) {
-            Music music = context.getBean("rockMusic", Music.class);
-            MusicPlayer musicPlayer = new MusicPlayer(music);
-            musicPlayer.playMusic();
-        }
-        else if(c==2) {
-            Music music = context.getBean("phonkMusic", Music.class);
-            MusicPlayer musicPlayer = new MusicPlayer(music);
-            musicPlayer.playMusic();
-        }
-        else {
-            Music music = context.getBean("classicalMusic", Music.class);
-            MusicPlayer musicPlayer = new MusicPlayer(music);
-            musicPlayer.playMusic();
-        }
+        MusicPlayer musicPlayer = context.getBean("musicPlayer",MusicPlayer.class);
+        musicPlayer.playMusic(MusicGenre.CLASSICAL);
+        musicPlayer.playMusic(MusicGenre.ROCK);
+        musicPlayer.playMusic(MusicGenre.PHONK);*/
 
-*/
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        System.out.println(musicPlayer.getName());
+        System.out.println(musicPlayer.getVolume());
 
-//        System.out.println(classicalMusic.getSong());
-
-
-
-//        ClassicalMusic classicalMusic1 = new ClassicalMusic();
-
-       /* MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-
-        boolean comparison = firstMusicPlayer == secondMusicPlayer;
-
-        System.out.println(comparison);
-
-        System.out.println(firstMusicPlayer);
-        System.out.println(secondMusicPlayer);
-
-        firstMusicPlayer.setVolume(15);
-        System.out.println(firstMusicPlayer.getVolume());
-        System.out.println(secondMusicPlayer.getVolume());*/
-        //System.out.println(musicPlayer.getName());
-        //System.out.println(musicPlayer.getVolume());
-        Computer computer = context.getBean("computer", Computer.class);
-        System.out.println(computer);
+        RockMusic rockMusic = context.getBean("rockMusic", RockMusic.class);
+        RockMusic rockMusic1 = context.getBean("rockMusic", RockMusic.class);
+        System.out.println(rockMusic);
+        System.out.println(rockMusic1);
 
         context.close();
     }

@@ -9,34 +9,6 @@
 
     <context:component-scan base-package="org.example" />
 
-<!--    <context:property-placeholder location="classpath:musicPlayer.properties"/>
-    <bean id="classical"
-          class="org.example.ClassicalMusic"
-          scope="prototype"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy"
-          factory-method="getClassicalMusic">
-    </bean>
-    <bean id="rock"
-          class="org.example.RockMusic">
-    </bean>
-    <bean id="phonk"
-          class="org.example.PhonkMusic">
-    </bean>-->
-
-    <!--<bean id="musicPlayer"
-          class="org.example.MusicPlayer"
-        scope="prototype">
-        <property name="musicList">
-            <list>
-                <ref bean="classical"/>
-                <ref bean="rock"/>
-                <ref bean="phonk"/>
-            </list>
-        </property>
-
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>-->
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
 </beans>
